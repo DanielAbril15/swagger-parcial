@@ -1,0 +1,130 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "WebServer Caballeros del zodiaco",
+    "description": "Caballeros del zodiaco ",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Daniel Abril"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:3010",
+      "description": "localhost get"
+    },
+    {
+      "url": "http://127.0.0.1:3020",
+      "description": "localhost post0"
+    }
+  ],
+  "paths": {
+    "/caballero/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "number" },
+            "description": "id caballero"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": { "type": "number" },
+                "example": "http://127.0.0.1:3010/caballero/5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/agregarCaballero": {
+      "post": {
+        "tags": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nombre": {
+                    "type": "varchar"
+                  },
+                  "edad": {
+                    "type": "number"
+                  },
+                  "altura": {
+                    "type": "varchar"
+                  },
+                  "constelacion": {
+                    "type": "varchar"
+                  },
+                  "imagen": {
+                    "type": "varchar"
+                  }
+                },
+                "required": [
+                  "nombre",
+                  "edad",
+                  "altura",
+                  "constelacion",
+                  "imagen"
+                ],
+                "example": {
+                  "nombre": "Seiya",
+                  "edad": 13,
+                  "altura": "165",
+                  "constelacion": "Pegaso",
+                  "imagen": "https://static.wikia.nocookie.net/caballeros-del-zodiaco/images/5/5a/Seiya.jpg/revision/latest/scale-to-width-down/300?cb=20150124211829&path-prefix=es"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "insercion exitosa",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "nombre": {
+                      "type": "varchar"
+                    },
+                    "edad": {
+                      "type": "number"
+                    },
+                    "altura": {
+                      "type": "varchar"
+                    },
+                    "constelacion": {
+                      "type": "varchar"
+                    },
+                    "imagen": {
+                      "type": "varchar"
+                    }
+                  },
+                  "example": {
+                    "nombre": "Seiya",
+                    "edad": 13,
+                    "altura": "165",
+                    "constelacion": "Pegaso",
+                    "imagen": "https://static.wikia.nocookie.net/caballeros-del-zodiaco/images/5/5a/Seiya.jpg/revision/latest/scale-to-width-down/300?cb=20150124211829&path-prefix=es"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
