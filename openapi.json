@@ -10,11 +10,11 @@
   },
   "servers": [
     {
-      "url": "http://127.0.0.1:3010",
+      "url": "http://100.24.113.217:3010",
       "description": "localhost get"
     },
     {
-      "url": "http://127.0.0.1:3020",
+      "url": "http://100.24.113.217:3020",
       "description": "localhost post0"
     }
   ],
@@ -36,7 +36,7 @@
             "content": {
               "text/plain": {
                 "schema": { "type": "number" },
-                "example": "http://127.0.0.1:3010/caballero/5"
+                "example": "http://100.24.113.217:3010/caballero/5"
               }
             }
           }
